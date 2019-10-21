@@ -56,9 +56,42 @@ hp-chooser{
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
+  height:30vmin;
   width: 100%;
 }
 hp-chooser * {
   max-width: 20%;
+
   margin: 5% 2.5%;
 }
+
+hp-chooser.chosen>*.chosen{
+ max-width: 30%;
+ animation-name: chosen;
+ animation-duration: .5s;
+}
+
+@keyframes chosen {
+from {
+  max-width: 20%;
+}
+to{
+  max-width: 30%;
+}
+}
+
+hp-chooser.chosen>*:not(.chosen) {
+  max-width: 16.6%;
+  animation-name: unchosen;
+  animation-duration: .5s;
+}
+
+
+@keyframes unchosen {
+  from {
+    max-width: 20%;
+  }
+  to{
+    max-width: 16.6%;
+  }
+  }
